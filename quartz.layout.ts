@@ -9,8 +9,8 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      "Obsidian vault（ソース）": "https://github.com/allusionistwiki/AllusionistWiki_obsidian",
-      "Quartz プロジェクト": "https://github.com/allusionistwiki/AllusionistWiki",
+      "Obsidian vault（ソース）": "https://github.com/allusionistwiki/AllusionistLLMWiki2",
+      "Quartz プロジェクト": "https://github.com/allusionistwiki/AllusionistLLMWiki2_Quartz",
     },
   }),
 }

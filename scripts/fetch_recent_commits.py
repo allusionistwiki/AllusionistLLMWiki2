@@ -12,7 +12,7 @@ import sys
 import urllib.request
 import datetime
 
-REPO = "allusionistwiki/AllusionistWiki_obsidian"
+REPO = "allusionistwiki/AllusionistLLMWiki2"
 OUT = "content/recent-commits.md"
 LIMIT = int(sys.argv[1]) if len(sys.argv) > 1 else 100
 

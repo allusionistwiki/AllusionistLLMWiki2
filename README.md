@@ -1,8 +1,8 @@
-# 幻想再帰のアリュージョニスト Wiki（Web公開版）
+# 幻想再帰のアリュージョニスト Wiki 2（Web公開版・リバイス版）
 
-[![Deploy](https://github.com/allusionistwiki/AllusionistWiki/actions/workflows/deploy.yml/badge.svg)](https://github.com/allusionistwiki/AllusionistWiki/actions)
+[![Deploy](https://github.com/allusionistwiki/AllusionistLLMWiki2_Quartz/actions/workflows/deploy.yml/badge.svg)](https://github.com/allusionistwiki/AllusionistLLMWiki2_Quartz/actions)
 
-**公開サイト: https://allusionistwiki.github.io/AllusionistWiki/**
+**公開サイト: https://allusionistwiki.github.io/AllusionistLLMWiki2_Quartz/**
 
 「ネットミームから現代思想まで引喩が散りばめたオカルトパンク」——本作の多層アナロジー（引喩・神話参照・展開の相似/相違）を典拠付きで体系化する分析WikiのWeb公開版。[Quartz](https://quartz.jzhao.xyz/) でObsidian vaultから静的サイトとしてビルドしています。
 
@@ -10,13 +10,13 @@
 
 | リポジトリ | 役割 |
 |---|---|
-| [`AllusionistWiki_obsidian`](https://github.com/allusionistwiki/AllusionistWiki_obsidian) | Obsidian vault本体（ソース・オブ・トゥルース）。`wiki/` がQuartzのcontentになる |
-| `AllusionistWiki`（本リポジトリ） | Quartzプロジェクト＋GitHub Pagesデプロイ設定。vaultの内容はCIが取得してビルドする |
+| [`AllusionistLLMWiki2`](https://github.com/allusionistwiki/AllusionistLLMWiki2) | Obsidian vault本体（ソース・オブ・トゥルース）。`wiki/` がQuartzのcontentになる |
+| `AllusionistLLMWiki2_Quartz`（本リポジトリ） | Quartzプロジェクト＋GitHub Pagesデプロイ設定。vaultの内容はCIが取得してビルドする |
 
 ## デプロイフロー
 
 1. vault側（Obsidianリポジトリ）にpush → または毎時スケジュール発火
-2. CIが `AllusionistWiki_obsidian` の `wiki/` を `content/` として取得
+2. CIが `AllusionistLLMWiki2` の `wiki/` を `content/` として取得
 3. `npx quartz build` で静的サイト生成
 4. GitHub Pages にデプロイ（vaultのSHAが変わらなければスキップ）
 
@@ -26,7 +26,7 @@
 
 ```bash
 # vault の wiki/ を content/ にコピー（またはシンボリックリンク）
-git clone https://github.com/allusionistwiki/AllusionistWiki_obsidian.git /tmp/vault
+git clone https://github.com/allusionistwiki/AllusionistLLMWiki2.git /tmp/vault
 mkdir -p content && cp -r /tmp/vault/wiki/. content/
 
 npm ci

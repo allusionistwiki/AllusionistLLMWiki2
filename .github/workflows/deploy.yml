@@ -32,7 +32,7 @@ jobs:
       - name: Get vault HEAD SHA
         id: vault
         run: |
-          sha=$(git ls-remote https://github.com/allusionistwiki/AllusionistWiki_obsidian.git refs/heads/main | cut -f1)
+          sha=$(git ls-remote https://github.com/allusionistwiki/AllusionistLLMWiki2.git refs/heads/main | cut -f1)
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
 
       - name: Check if this vault SHA was already deployed
@@ -55,7 +55,7 @@ jobs:
       - name: Fetch wiki content from Obsidian vault repo
         if: steps.flag.outputs.deploy == 'true'
         run: |
-          git clone --depth 1 https://github.com/allusionistwiki/AllusionistWiki_obsidian.git /tmp/vault
+          git clone --depth 1 https://github.com/allusionistwiki/AllusionistLLMWiki2.git /tmp/vault
           mkdir -p content
           cp -r /tmp/vault/wiki/. content/
 
@@ -98,7 +98,7 @@ jobs:
       # デプロイ成功後にのみvault SHAを記録（失敗時は次回再試行される）
       - name: Get vault HEAD SHA
         run: |
-          sha=$(git ls-remote https://github.com/allusionistwiki/AllusionistWiki_obsidian.git refs/heads/main | cut -f1)
+          sha=$(git ls-remote https://github.com/allusionistwiki/AllusionistLLMWiki2.git refs/heads/main | cut -f1)
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
         id: vault
 
