@@ -65,5 +65,6 @@ export const defaultListPageLayout: PageLayout = {
     }),
     Component.Explorer(),
   ],
-  right: [],
+  // 一覧ページ（関係性マップ・登場人物一覧など）にもグラフを表示する
+  right: [Component.Graph()],
 }
