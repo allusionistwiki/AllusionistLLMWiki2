@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: null,
     },
     locale: "ja-JP",
-    baseUrl: "allusionistwiki.github.io/AllusionistLLMWiki2_Quartz",
+    baseUrl: "allusionistwiki.github.io/AllusionistLLMWiki2",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
