@@ -50,6 +50,7 @@ type LinkRenderData = GraphicsInfo & {
 type NodeRenderData = GraphicsInfo & {
   simulationData: NodeData
   label: Text
+  labeled?: boolean
 }
 
 const localStorageKey = "graph-visited"
@@ -395,7 +396,7 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
       interactive: false,
       eventMode: "none",
       text: showLabel ? n.text : "",
-      alpha: 0,
+      alpha: showLabel ? 1 : 0,
       anchor: { x: 0.5, y: 1.2 },
       style: {
         fontSize: fontSize * 15,
@@ -435,6 +436,8 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
     if (isTagNode) {
       gfx.stroke({ width: 2, color: computedStyleMap["--tertiary"] })
     }
+    // labelPrefixes 対象外のノードはマーク（円）を描かない（線は残す）
+    gfx.visible = showLabel
 
     nodesContainer.addChild(gfx)
     labelsContainer.addChild(label)
@@ -446,6 +449,7 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
       color: color(n),
       alpha: 1,
       active: false,
+      labeled: showLabel,
     }
 
     nodeRenderData.push(nodeRenderDatum)
@@ -529,7 +533,8 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
           // zoom adjusts opacity of labels too
           const scale = transform.k * opacityScale
           let scaleOpacity = Math.max((scale - 1) / 3.75, 0)
-          const activeNodes = nodeRenderData.filter((n) => n.active).flatMap((n) => n.label)
+          // labelPrefixes 対象（labeled）のノードは常時表示 → ズーム減光の対象外
+          const activeNodes = nodeRenderData.filter((n) => n.active || n.labeled).flatMap((n) => n.label)
 
           for (const label of labelsContainer.children) {
             if (!activeNodes.includes(label)) {
