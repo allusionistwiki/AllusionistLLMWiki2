@@ -42,7 +42,8 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Explorer(),
   ],
   right: [
-    Component.Graph(),
+    // グローバルグラフ（展開時）は現ページから 2 跳先に限定（リポジトリ全体にならないよう）
+    Component.Graph({ globalGraph: { depth: 2 } }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
@@ -66,5 +67,6 @@ export const defaultListPageLayout: PageLayout = {
     Component.Explorer(),
   ],
   // 一覧ページ（関係性マップ・登場人物一覧など）にもグラフを表示する
-  right: [Component.Graph()],
+  // グローバルグラフ（展開時）は現ページから 2 跳先に限定
+  right: [Component.Graph({ globalGraph: { depth: 2 } })],
 }
