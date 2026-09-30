@@ -87,6 +87,7 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
     showTags,
     focusOnHover,
     enableRadial,
+    labelPrefixes,
   } = JSON.parse(graph.dataset["cfg"]!) as D3Config
 
   // 自動生成ページ・index系・log・status はグラフの対象外。
@@ -386,10 +387,14 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
   for (const n of graphData.nodes) {
     const nodeId = n.id
 
+    // labelPrefixes 指定時は、該当 slug のノードのみ名前を表示する
+    const showLabel = !labelPrefixes || labelPrefixes.length === 0 ||
+      labelPrefixes.some((p) => nodeId.startsWith(p))
+
     const label = new Text({
       interactive: false,
       eventMode: "none",
-      text: n.text,
+      text: showLabel ? n.text : "",
       alpha: 0,
       anchor: { x: 0.5, y: 1.2 },
       style: {

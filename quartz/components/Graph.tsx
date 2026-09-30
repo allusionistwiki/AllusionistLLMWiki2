@@ -19,11 +19,21 @@ export interface D3Config {
   showTags: boolean
   focusOnHover?: boolean
   enableRadial?: boolean
+  // 指定プレフィックスの slug を持つノードのみラベル（名前）を表示する。
+  // 空配列/未指定 = 全ノード表示。
+  labelPrefixes?: string[]
 }
 
 interface GraphOptions {
   localGraph: Partial<D3Config> | undefined
   globalGraph: Partial<D3Config> | undefined
+}
+
+// ページ frontmatter の graph: キーでローカル/グローバル設定を上書きする
+// （例: graph: { local: { depth: 4, labelPrefixes: ["entities/characters/"] } }）
+function fmGraph(frontmatter: Record<string, unknown> | undefined, key: "local" | "global"): Partial<D3Config> {
+  const g = frontmatter?.graph as Record<string, Partial<D3Config>> | undefined
+  return g?.[key] ?? {}
 }
 
 const defaultOptions: GraphOptions = {
@@ -60,9 +70,9 @@ const defaultOptions: GraphOptions = {
 }
 
 export default ((opts?: Partial<GraphOptions>) => {
-  const Graph: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
-    const localGraph = { ...defaultOptions.localGraph, ...opts?.localGraph }
-    const globalGraph = { ...defaultOptions.globalGraph, ...opts?.globalGraph }
+  const Graph: QuartzComponent = ({ displayClass, cfg, fileData }: QuartzComponentProps) => {
+    const localGraph = { ...defaultOptions.localGraph, ...opts?.localGraph, ...fmGraph(fileData?.frontmatter, "local") }
+    const globalGraph = { ...defaultOptions.globalGraph, ...opts?.globalGraph, ...fmGraph(fileData?.frontmatter, "global") }
     return (
       <div class={classNames(displayClass, "graph")}>
         <h3>{i18n(cfg.locale).components.graph.title}</h3>
