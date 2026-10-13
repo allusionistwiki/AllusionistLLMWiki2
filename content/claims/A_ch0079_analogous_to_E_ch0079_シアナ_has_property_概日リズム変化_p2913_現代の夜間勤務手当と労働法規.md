@@ -1,0 +1,7 @@
+---
+title: 移設済み（アリュージョニスト Wiki 2 へ）
+---
+
+<meta http-equiv="refresh" content="0; url=https://allusionistwiki.github.io/AllusionistWiki2/claims/A_ch0079_analogous_to_E_ch0079_シアナ_has_property_概日リズム変化_p2913_現代の夜間勤務手当と労働法規">
+
+このページは **アリュージョニスト Wiki 2** へ移設しました。移動しない場合は [こちら](https://allusionistwiki.github.io/AllusionistWiki2/claims/A_ch0079_analogous_to_E_ch0079_シアナ_has_property_概日リズム変化_p2913_現代の夜間勤務手当と労働法規) を開いてください。

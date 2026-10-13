@@ -1,0 +1,7 @@
+---
+title: 移設済み（アリュージョニスト Wiki 2 へ）
+---
+
+<meta http-equiv="refresh" content="0; url=https://allusionistwiki.github.io/AllusionistWiki2/claims/A_ch0067_structurally_matches_E_ch0067_エスフェイル_other_宣名のリスク_p2504_privacy_paradox">
+
+このページは **アリュージョニスト Wiki 2** へ移設しました。移動しない場合は [こちら](https://allusionistwiki.github.io/AllusionistWiki2/claims/A_ch0067_structurally_matches_E_ch0067_エスフェイル_other_宣名のリスク_p2504_privacy_paradox) を開いてください。

@@ -1,0 +1,7 @@
+---
+title: 移設済み（アリュージョニスト Wiki 2 へ）
+---
+
+<meta http-equiv="refresh" content="0; url=https://allusionistwiki.github.io/AllusionistWiki2/claims/A_ch0019_structurally_matches_E_ch0019_アキラ_learns_世界の言語_p860_言語学_母語の獲得">
+
+このページは **アリュージョニスト Wiki 2** へ移設しました。移動しない場合は [こちら](https://allusionistwiki.github.io/AllusionistWiki2/claims/A_ch0019_structurally_matches_E_ch0019_アキラ_learns_世界の言語_p860_言語学_母語の獲得) を開いてください。

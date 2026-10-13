@@ -1,0 +1,7 @@
+---
+title: 移設済み（アリュージョニスト Wiki 2 へ）
+---
+
+<meta http-equiv="refresh" content="0; url=https://allusionistwiki.github.io/AllusionistWiki2/claims/A_ch0172_analogous_to_E_ch0172_ちびシューラ_other_風圧_p5724_アニメ的演出の物理法則無視">
+
+このページは **アリュージョニスト Wiki 2** へ移設しました。移動しない場合は [こちら](https://allusionistwiki.github.io/AllusionistWiki2/claims/A_ch0172_analogous_to_E_ch0172_ちびシューラ_other_風圧_p5724_アニメ的演出の物理法則無視) を開いてください。
